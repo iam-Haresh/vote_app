@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Fetch') {
             steps {
-                bash '''
+                sh '''
                 rm -rf vote_app
                 git clone https://github.com/iam-Haresh/vote_app.git
                 cd vote_app
