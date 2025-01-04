@@ -29,7 +29,7 @@ pipeline {
                     image: ${IMAGE_NAME}
                     ports:
                     - 80:80" > compose.yaml
-                docker compose up
+                docker compose up -d
                 '''
             }
         }
