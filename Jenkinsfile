@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Fetch') {
             steps {
-                sh '''
+                bash '''
                 rm -rf vote_app
                 git clone https://github.com/iam-Haresh/vote_app.git
                 cd vote_app
@@ -24,7 +24,11 @@ pipeline {
             steps {
                 sh '''
                 IMAGE_NAME=597088025241.dkr.ecr.us-east-1.amazonaws.com/upgrad/assignment_vote:${VERSION}
-                echo -e "services:\n  vote:\n    image: ${IMAGE_NAME}\n    ports:\n      - 80:80" > compose.yaml
+                echo "services:
+                vote:
+                    image: ${IMAGE_NAME}
+                    ports:
+                    - 80:80" > compose.yaml
                 docker compose up
                 '''
             }
