@@ -24,7 +24,7 @@ pipeline {
             steps {
                 sh '''
                 IMAGE_NAME=597088025241.dkr.ecr.us-east-1.amazonaws.com/upgrad/assignment_vote:${VERSION}
-                echo -e "services:\n  vote:\n    image: ${IMAGE_NAME}\n    ports:\n      - 80:80" > docker-compose.yaml
+                echo -e "services:\n  vote:\n    image: ${IMAGE_NAME}\n    ports:\n      - 80:80" > compose.yaml
                 docker compose up
                 '''
             }
