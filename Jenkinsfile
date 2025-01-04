@@ -4,7 +4,6 @@ pipeline {
         stage('Fetch') {
             steps {
                 sh '''
-                rm 
                 rm -rf vote_app
                 git clone https://github.com/iam-Haresh/vote_app.git
                 cd vote_app
